@@ -1,6 +1,6 @@
 ﻿Feature: MarsQAprofile
 
-MarsQA Specflow fature file
+MarsQA Specflow Scenario feature file
 
 @LoginSuccessful
 Scenario: A configuration of successful loging with valid crendentials
