@@ -76,8 +76,8 @@ public void LangTab(IWebDriver driver)
                 driver.Navigate().Refresh();
                 LanguagePage LangPageObj = new LanguagePage();
                 LangPageObj.LangTab(driver);
-                WaitHelpers.WaitToBeVisible(driver, "XPath", "//div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody[last()]/tr/td[1]", 10);
-                IWebElement GetLanguage = driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody[last()]tr/td[1]"));
+                WaitHelpers.WaitToBeVisible(driver, "XPath", "//div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[1]", 10);
+                IWebElement GetLanguage = driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[1]"));
                 return GetLanguage.Text;
             }
             catch (Exception)

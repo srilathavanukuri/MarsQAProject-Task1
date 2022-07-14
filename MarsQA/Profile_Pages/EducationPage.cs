@@ -50,8 +50,9 @@ namespace MarsQA.Profile_Pages
         }
         public void EditEducation(IWebDriver driver)
         {
-            //Select EditButton
-            IWebElement EditButton = driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td[6]/span[1]"));
+            WaitHelpers.WaitToBeVisible(driver, "Xpath", "//div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td[6]/span[1]", 10);
+           //Select EditButton
+           IWebElement EditButton = driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td[6]/span[1]"));
             EditButton.Click();
             // Identify and Edit University
             IWebElement EdituniversityName = driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td/div[1]/div[1]/input"));
@@ -96,8 +97,8 @@ namespace MarsQA.Profile_Pages
                 driver.Navigate().Refresh();
                 EducationPage EducationPageObj = new EducationPage();
                 EducationPageObj.EducationTab(driver);
-                WaitHelpers.WaitToBeVisible(driver, "XPath", "//div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody[last()]/tr/td[1]", 10);
-                IWebElement GetEducationCountry = driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody[last()]/tr/td[1]"));
+                WaitHelpers.WaitToBeVisible(driver, "XPath", "//div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td[1]", 10);
+                IWebElement GetEducationCountry = driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td[1]"));
                 return GetEducationCountry.Text;
             }
             catch (Exception)

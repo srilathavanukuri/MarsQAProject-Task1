@@ -74,6 +74,7 @@ namespace MarsQA.Profile_Pages
         }
         public string GetProfileValue(IWebDriver driver)
         {
+            WaitHelpers.WaitToBeVisible(driver, "Xpath", "//div/section[2]/div/div/div/div[2]/div/div/div/div/div/div[2]/div/div/div[1]", 10);
             IWebElement GetProfileDetails = driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[2]/div/div/div/div/div/div[2]/div/div/div[1]"));
                 return GetProfileDetails.Text;
         }
